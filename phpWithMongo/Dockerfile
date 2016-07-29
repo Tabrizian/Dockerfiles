@@ -6,3 +6,6 @@ RUN apt-get update && apt-get install mongodb-org mongodb-org-server -y
 RUN apt-get install php5 php5-dev libapache2-mod-php5 apache2-threaded-dev php-pear php5-mongo vim -y
 RUN pecl install mongo
 RUN echo "extension=mongo.so" >> /etc/php5/apache2/php.ini
+RUN mkdir /data
+RUN mkdir /data/db
+RUN service apache2 start
